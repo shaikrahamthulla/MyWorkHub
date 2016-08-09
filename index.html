@@ -1,0 +1,131 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.1.js"></script>
+    <script src="example.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+<style type="text/css">
+  .heading
+  {
+    background: linear-gradient(#77A1F4, #DBE5F9);
+     border:1px solid black;
+  color:black;
+  font-weight:bold;
+
+  }
+  .display{
+    background-color:white;
+  }
+  
+ 
+.main
+ {
+   margin-top:50px;
+ 
+   width:90%;
+   background-color:white;
+   
+ }
+ body{
+  background-color:#D5DBE0;
+}
+
+#table_content{
+  
+  margin-top:15px;
+  margin-left:15px;
+  width:90%;
+}
+
+#collapseBtn{
+  
+  position:relative;
+  left:45%;
+  width:30px;
+  height:30px;
+}
+
+
+</style>
+<div class="main container">
+<div ng-controller="TabsDemoCtrl">
+ <uib-tabset active="active" class="cells">
+    <uib-tab index="0" heading="Details 1" class="heading"><div id="display">
+      
+      <table name="t1"  id="table_content" cellspacing="30px" cellpadding="30px" border="0">
+        	<tr>
+        		<td><label>Key</label> </td>  <td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>	
+        	</tr>	
+        	
+        	<tr>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>	
+        	</tr>	
+        	
+        	<tr>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>	
+        	</tr>	
+
+      </table>
+      
+      <div uib-collapse="isCollapsed">
+		    <div>
+		      
+		       <table name="t1"  id="table_content" cellspacing="30px" cellpadding="30px" border="0">
+        	<tr>
+        		<td><label>Key</label> </td>  <td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>	
+        	</tr>	
+        	
+        	<tr>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>	
+        	</tr>	
+        	
+        	<tr>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>		
+        		<td><label>Key</label></td>	<td><span>Value</span></td>	
+        	</tr>	
+
+      </table>
+		      
+		    </div>
+	    </div>
+      
+      
+      
+      <span ng-click="isCollapsed = !isCollapsed" id="collapseBtn" class="glyphicon" ng-class="{'glyphicon-chevron-down': isCollapsed, 'glyphicon-chevron-up': !isCollapsed}"></span>
+
+      
+    </div></uib-tab>
+    <uib-tab index="$index + 1" class="heading" ng-repeat="tab in tabs" heading="{{tab.title}}" disable="tab.disabled">
+      {{tab.content}}
+    </uib-tab>
+  </uib-tabset>
+
+  </div>
+  </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
